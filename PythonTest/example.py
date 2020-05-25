@@ -19,6 +19,10 @@ from sys import argv
 from collections import defaultdict
 
 def parser(inputfile,outputfile):
+    if not os.path.isfile(inputfile):
+        print ('Bedfile does not exist at location provided, please check (tried "{}")'.format(inputfile))
+        exit(2)
+    print ("Loading file: {} ...".format(inputfile))
     if inputfile.endswith(".gz") == False:
         File = open(inputfile,'r')
     else:
@@ -30,13 +34,14 @@ def parser(inputfile,outputfile):
         if line.startswith("#") == False:
                            line = re.split("\s+",line)
                            dict_stat[line[0]] += 1
-    return(dict_stat)
+    OUT = open (outputfile,'w')
+    for key in sorted (dict_stat):
+        OUT.write("%s\t%s" %(key,dict_chr[key]))
+    #return(dict_stat)
     
 if __name__ == "__mian__":
     if len(argv) < 2:
         print (Usage)
     else:
         parser(argv[1],argv[2])
-        
-        
         
