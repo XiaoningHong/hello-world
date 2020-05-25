@@ -14,6 +14,7 @@ Usage:
     
 import gzip
 import re
+import os
 from sys import argv
 from collections import defaultdict
 
