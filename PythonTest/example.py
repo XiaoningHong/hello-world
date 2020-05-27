@@ -20,7 +20,7 @@ from collections import defaultdict
 
 def parser(inputfile,outputfile):
     if not os.path.isfile(inputfile):
-        print ('Bedfile does not exist at location provided, please check (tried "{}")'.format(inputfile))
+        print ('File does not exist at location provided, please check (tried "{}")'.format(inputfile))
         exit(2)
     print ("Loading file: {} ...".format(inputfile))
     if inputfile.endswith(".gz") == False:
