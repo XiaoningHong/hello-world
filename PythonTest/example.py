@@ -39,7 +39,7 @@ def parser(inputfile,outputfile):
         OUT.write("%s\t%s" %(key,dict_chr[key]))
     #return(dict_stat)
     
-if __name__ == "__mian__":
+if __name__ == "__main__":
     if len(argv) <= 2:
         print (Usage)
     else:
