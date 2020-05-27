@@ -9,7 +9,7 @@ Created on Fri Apr  3 11:10:16 2020
 Usage="""
 This script 
 Usage:
-    python temp.py inputfile1 outputname
+    python temp.py inputfile outputname
 """
     
 import gzip
@@ -40,7 +40,7 @@ def parser(inputfile,outputfile):
     #return(dict_stat)
     
 if __name__ == "__mian__":
-    if len(argv) < 2:
+    if len(argv) <= 2:
         print (Usage)
     else:
         parser(argv[1],argv[2])
